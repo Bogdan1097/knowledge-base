@@ -1,8 +1,8 @@
 # Know Your Customer
 
-TokenD system provides a powerful set of data agnostic tools for easy implementation of custom KYC procedure based on the regulations of a specific jurisdiction. Tasks based approach allows to do various verification steps which could include manual verification as well as integration with external system which can provide sanction lists screening, documents verification, etc.
+TokenD system provides a powerful set of data agnostic tools for easy implementation of custom KYC procedure based on the regulations of a specific jurisdiction. A task-based approach allows to perform various verification steps, which could include manual verification as well as integration with external systems, which can provide sanction lists screening, documents verification, etc.
 
-Example of KYC request:
+Example of a KYC request:
 
 ```json
 {

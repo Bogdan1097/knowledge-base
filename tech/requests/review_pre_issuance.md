@@ -1,6 +1,6 @@
 # Review pre issuance request
 
-This operation allows review `pre issuance request`.
+This operation allows reviewing the `pre issuance request`.
 
 ## Source account details
 

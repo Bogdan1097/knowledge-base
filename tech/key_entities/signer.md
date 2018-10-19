@@ -1,13 +1,13 @@
 # Signers
 
-Signer is the main concept used for authorization. To be able to perform transaction on read private data of particular account from any of the services signature of one of the signers of that account must be provided.
+Authorization without a signer is impossible. For the services to perform a transaction for reading the private data of a particular account, a signature of one of the signers of that account must be provided.
 
 ## Signer Fields
 
 * **pubKey** &mdash; public key of the ed25519 key pair. Used as identifier of the signer.
-* **weight** &mdash; specifies weight of the signer.
-* **signerType**  &mdash; bit mask of signer types; Defines set of operations allowed to be authorized by the signer in name of the account.
-* **identity** &mdash; identity of the signer. Two signatures created by two different signers with same identity are handled as one.
+* **weight** &mdash; specifies the weight of a signer.
+* **signerType**  &mdash; bit mask of signer types; Defines a set of operations allowed to be authorized by the signer in the name of account.
+* **identity** &mdash; identity of the signer. Two signatures created by two different signers with the same identity are considered  as one.
 * **name** &mdash; name of the signer.
 
 ## Signer types
@@ -22,24 +22,24 @@ Here is the list of all existing signer types at the moment:
 | ASSET_MANAGER                           | 16         | Create [assets][2], create [asset pairs][3] and update policies
 | ASSET_RATE_MANAGER                      | 32         | Set physical asset price
 | BALANCE_MANAGER                         | 64         | Create [balances][5], spend assets from balances
-| ISSUANCE_MANAGER                        | 128        | Create preissuance request
+| ISSUANCE_MANAGER                        | 128        | Create preissuance requests
 | INVOICE_MANAGER                         | 256        | Create and review invoice requests to other accounts
 | LIMITS_MANAGER                          | 1024       | Change limits
 | ACCOUNT_MANAGER                         | 2048       | Add/delete signers and trust
-| COMMISSION_BALANCE_MANAGER              | 4096       | Spend from `commission` balances
-| OPERATIONAL_BALANCE_MANAGER             | 8192       | Spend from `operational` balances
+| COMMISSION_BALANCE_MANAGER              | 4096       | Spend the `commission` balances
+| OPERATIONAL_BALANCE_MANAGER             | 8192       | Spend the `operational` balances
 | EVENTS_CHECKER                          | 16384      | Check and trigger events
-| EXCHANGE_ACC_MANAGER                    | 32768      | Manage `exchange` account
-| SYNDICATE_ACC_MANAGER                   | 65536      | Manage `syndicate` account
+| EXCHANGE_ACC_MANAGER                    | 32768      | Manage `exchange` accounts
+| SYNDICATE_ACC_MANAGER                   | 65536      | Manage `syndicate` accounts
 | USER_ASSET_MANAGER                      | 131072     | Review sale, asset creation/update requests
 | USER_ISSUANCE_MANAGER                   | 262144     | Review pre-issuance/issuance requests
 | WITHDRAW_MANAGER                        | 524288     | Review withdraw requests
 | FEES_MANAGER                            | 1048576    | Manage custom fees imposition rules
 | TX_SENDER                               | 2097152    | Send tx
-| AML_ALERT_MANAGER                       | 4194304    | Manage AML alert requests
+| AML_ALERT_MANAGER                       | 4194304    | Manage aml alert requests
 | AML_ALERT_REVIEWER                      | 8388608    | Review aml alert requests
-| KYC_ACC_MANAGER                         | 16777216   | Manage kyc
-| KYC_SUPER_ADMIN                         | 33554432   | Create kyc requests with tasks and kyc requests for other users, manage kyc rule key value, review kyc requests create/update request |
+| KYC_ACC_MANAGER                         | 16777216   | Manage kyc requests
+| KYC_SUPER_ADMIN                         | 33554432   | Create kyc requests with tasks and kyc requests for other users, manage kyc rule key value, review kyc requests, create/update request |
 | EXTERNAL_SYSTEM_ACCOUNT_ID_POOL_MANAGER | 67108864   | Manage external system pools
 | KEY_VALUE_MANAGER                       | 134217728  | Manage keyValue
 | SUPER_ISSUANCE_MANAGER                  | 268435456  | Review issuance/pre-issuance requests
